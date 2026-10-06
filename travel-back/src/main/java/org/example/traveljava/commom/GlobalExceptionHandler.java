@@ -1,0 +1,20 @@
+package org.example.traveljava.commom;
+
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import java.util.stream.Collectors;
+import org.example.traveljava.vo.Result;
+
+//拦截控制器异常，返回统一格式的Result
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+    @ExceptionHandler(MethodArgumentNotValidException.class)  // 处理参数校验异常
+    public Result<Void> handlerException(MethodArgumentNotValidException e) {
+        String message = e.getBindingResult().getFieldErrors().stream()
+                .map(FieldError::getDefaultMessage)
+                .collect(Collectors.joining(", "));
+        return Result.fail(400, message);
+    }
+}

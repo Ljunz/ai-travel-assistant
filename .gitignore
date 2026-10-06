@@ -1,0 +1,26 @@
+﻿# ---------- 通用 ----------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.env
+.env.*
+!.env.example
+# ---------- 前端 (travel-front) ----------
+travel-front/node_modules/
+travel-front/dist/
+travel-front/.vite/
+travel-front/.cache/
+travel-front/.env
+travel-front/.env.*
+# ---------- 后端 (travel-back) ----------
+travel-back/target/
+travel-back/.idea/
+travel-back/.settings/
+travel-back/*.class
+travel-back/*.log
+travel-back/.classpath
+travel-back/.project
+# ---------- 其它 ----------
+*.log
+*.tmp

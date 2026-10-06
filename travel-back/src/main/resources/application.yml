@@ -1,0 +1,7 @@
+server:
+  port: 3200
+
+llm:
+  baseUrl: https://api.siliconflow.cn/v1
+  model: Pro/zai-org/GLM-5.1
+  api-key: sk-vinuxkzrvowwlnntpuksriciybianaaphkfkhbmcilzivrbs
